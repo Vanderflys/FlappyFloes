@@ -86,7 +86,7 @@ function update() {
     bird.velocity += bird.gravity;
     bird.y += bird.velocity;
 
-    // Check if bird is below the canvas
+  // Check if bird is below the canvas
     if (bird.y + bird.radius > canvas.height) {
         isGameStarted = false;
         location.reload(); // Reload the page to restart the game
@@ -133,7 +133,7 @@ function render() {
         // Render the click-to-start menu
         context.fillStyle = 'black';
         context.font = '30px Arial';
-        context.fillText('Click to Start Playing Flappy Floes v1.11', canvas.width / 2 - 100, canvas.height / 2);
+        context.fillText('Click to Start Playing Flappy Floes v1.12', canvas.width / 2 - 100, canvas.height / 2);
     } else {
         // Draw bird
         context.beginPath();
