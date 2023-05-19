@@ -36,7 +36,7 @@ canvas.addEventListener('click', handleCanvasClick);
 function handleKeyDown(event) {
     if (event.code === 'Space' || event.code === 'ArrowUp') {
         if (!isGameStarted) {
-        isGameStarted = true;
+            isGameStarted = true;
         }
         flapBird();
     }
@@ -47,7 +47,7 @@ function handleCanvasClick() {
         isGameStarted = true;
         flapBird();
     }
-    }
+}
 
 // Flap the bird
 function flapBird() {
@@ -88,7 +88,7 @@ function update() {
 
     // Check if bird is below the canvas
     if (bird.y + bird.radius > canvas.height) {
-        // Game over
+        isGameStarted = false;
         location.reload(); // Reload the page to restart the game
     }
 
@@ -105,18 +105,18 @@ function update() {
 
         // Remove pipes outside the canvas
         if (p.x + pipe.width <= 0) {
-        pipe.pipes.shift();
-        score++;
+            pipe.pipes.shift();
+            score++;
         }
 
         // Collision detection
         if (
-        bird.x + bird.radius > p.x &&
-        bird.x - bird.radius < p.x + pipe.width &&
-        (bird.y - bird.radius < p.y || bird.y + bird.radius > p.y + pipe.gap)
+            bird.x + bird.radius > p.x &&
+            bird.x - bird.radius < p.x + pipe.width &&
+            (bird.y - bird.radius < p.y || bird.y + bird.radius > p.y + pipe.gap)
         ) {
-        // Game over
-        location.reload(); // Reload the page to restart the game
+            // Game over
+            location.reload(); // Reload the page to restart the game
         }
     }
 
