@@ -133,7 +133,7 @@ function render() {
         // Render the click-to-start menu
         context.fillStyle = 'black';
         context.font = '30px Arial';
-        context.fillText('Click to Start Playing Flappy Floes v1.12', canvas.width / 2 - 100, canvas.height / 2);
+        context.fillText('Click to Start Playing Flappy Floes v1.12', canvas.width / 2 - 275, canvas.height / 2);
     } else {
         // Draw bird
         context.beginPath();
